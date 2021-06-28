@@ -1,0 +1,37 @@
+"""
+   * Dosya okuma ve yazma işlemleri yapalım
+    Öğrenci notlarını tutan bir dosya oluşturmak için aşağıda yer alan adımları takip edilebilir. 
+    
+   * Let's read and write files. 
+    To create a file that keeps student notes, the following steps can be followed.
+"""
+
+# Yazmak için dosya oluştur
+# Create file
+
+dosya = open('notlar.text', 'w')
+
+notlar = {
+    "ali": 45,
+    "ahmet": 90,
+    "veli": 75,
+    "mehmet": 60,
+    "serdar": 85,
+    "ayse": 40,
+    "binnur" :55,
+    "mehmet" : 85
+}
+
+for item in notlar.items():
+    dosya.write(str(item))
+    dosya.write('\n')
+
+dosya.close()
+
+# Dosyayı okumak için tekrar açtık
+# Open file again to read
+dosya = open('notlar.text', 'r')
+for i in dosya.readlines():
+    print(i)
+
+dosya.close()
